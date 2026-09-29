@@ -1,7 +1,6 @@
 # Jumeirah Joy A. Bayotas - Portfolio Website
 
 ## Overview
-
 This repository contains my personal portfolio website developed as a 4th-year Bachelor of Science in Information Technology (BSIT) student at Davao del Norte State College.
 
 The website showcases my background, skills, coursework, and academic projects while representing my growth in web development and system development.
@@ -10,7 +9,7 @@ The website showcases my background, skills, coursework, and academic projects w
 
 ## About Me
 
-I am a 4th-year BSIT student passionate about creating user-centered applications and continuously improving my technical and problem-solving skills through different projects and emerging technologies.
+Hello Everyone!, I am Jumeirah Joy A. Bayotas - a 4th-year BSIT student passionate about creating user-centered applications and continuously improving my technical and problem-solving skills through different projects and emerging technologies.
 
 ---
 
@@ -23,7 +22,6 @@ Bachelor of Science in Information Technology
 **Subject:** IT415 - Application Development and Emerging Technologies
 
 ---
-
 ## Skills
 
 ### Technical Skills
