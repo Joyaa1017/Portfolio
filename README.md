@@ -9,7 +9,6 @@ The website showcases my background, skills, coursework, and academic projects w
 ---
 
 ## About Me
-
 I am a 4th-year BSIT student passionate about creating user-centered applications and continuously improving my technical and problem-solving skills through different projects and emerging technologies.
 
 ---
