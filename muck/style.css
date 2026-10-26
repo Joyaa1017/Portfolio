@@ -1437,3 +1437,1338 @@ header{background:color-mix(in srgb,var(--bg) 96%,transparent);box-shadow:0 2px 
     transition: none;
   }
 }
+
+/* =========================================
+   PROJECT SHOWCASE - LAYOUT FIX
+========================================= */
+
+/* Remove large card backgrounds */
+
+.projects-showcase .showcase-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 0;
+  min-width: 0;
+  text-align: center;
+}
+
+/* Consistent project grid */
+
+.projects-showcase .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(20px, 2.5vw, 40px);
+}
+
+/* Remove middle-card vertical offset */
+
+.projects-showcase .showcase-card.featured {
+  transform: none;
+}
+
+/* Keep hover animation */
+
+@media (hover: hover) {
+  .projects-showcase .showcase-card:hover,
+  .projects-showcase .showcase-card.featured:hover {
+    transform: translateY(-7px);
+  }
+}
+
+/* Project image containers */
+
+.projects-showcase .project-frame {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  padding: 12px;
+
+  background: var(--projects-frame);
+  border: 1px solid var(--projects-border);
+  border-radius: 18px;
+
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+/* Project screenshots */
+
+.projects-showcase .project-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+
+/* Project titles */
+
+.projects-showcase .showcase-card h3 {
+  color: var(--projects-text);
+  font-size: clamp(1.15rem, 1.6vw, 1.55rem);
+  line-height: 1.3;
+  margin: 0 0 10px;
+}
+
+/* Consistent description spacing */
+
+.projects-showcase .showcase-card p {
+  color: var(--projects-muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  max-width: 35ch;
+  margin: 0 auto 18px;
+}
+
+/* Align buttons */
+
+.projects-showcase .showcase-btn {
+  margin-top: auto;
+  align-self: center;
+}
+
+/* Tablet */
+
+@media (max-width: 960px) {
+  .projects-showcase .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+  .projects-showcase .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .projects-showcase .project-frame {
+    max-width: 520px;
+  }
+
+  .projects-showcase .showcase-card,
+  .projects-showcase .showcase-card.featured {
+    transform: none;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-showcase .showcase-card {
+    transition: none;
+  }
+
+  .projects-showcase .showcase-card:hover {
+    transform: none;
+  }
+}
+
+
+/* =========================================
+   PROJECT SCREENSHOTS - DISPLAY FIX
+========================================= */
+
+.projects-showcase .project-frame {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px;
+  overflow: hidden;
+
+  background: var(--projects-frame);
+  border: 1px solid var(--projects-border);
+  border-radius: 18px;
+}
+
+.projects-showcase .project-frame img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  /* Show the entire screenshot */
+  object-fit: contain;
+  object-position: center;
+
+  border-radius: 10px;
+
+  transition: transform 0.35s ease;
+}
+
+/* Gentle image zoom on hover */
+
+@media (hover: hover) {
+  .projects-showcase
+  .showcase-card:hover
+  .project-frame img {
+    transform: scale(1.025);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+  .projects-showcase .project-frame {
+    aspect-ratio: 16 / 10;
+    padding: 8px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-showcase .project-frame img {
+    transition: none;
+  }
+
+  .projects-showcase
+  .showcase-card:hover
+  .project-frame img {
+    transform: none;
+  }
+}
+
+
+/* ==========================================
+   ACHIEVEMENTS & EXPERIENCE
+   DUCHESS GREEN EDITORIAL DESIGN
+=========================================== */
+
+/* LIGHT MODE */
+
+:root {
+  --journey-bg: #f6f8f3;
+  --journey-card: #fffefa;
+  --journey-title: #153b2c;
+  --journey-text: #344c3d;
+  --journey-muted: #6d8171;
+  --journey-accent: #4c7b5d;
+  --journey-soft: #e8f0e7;
+  --journey-border: #dce7dc;
+  --journey-line: #678c70;
+  --journey-shadow: 0 10px 35px rgba(23, 61, 44, 0.045);
+}
+
+/* MAIN SECTION */
+
+.journey-section {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 90% 10%,
+      rgba(120, 158, 127, 0.10),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 7% 90%,
+      rgba(120, 158, 127, 0.08),
+      transparent 30%
+    ),
+    var(--journey-bg);
+
+  color: var(--journey-text);
+  padding: 95px 0 110px;
+}
+
+.journey-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* EDITORIAL HEADING */
+
+.journey-heading {
+  margin-bottom: 55px;
+}
+
+.journey-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--journey-accent);
+  margin-bottom: 15px;
+}
+
+.journey-section .journey-heading h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.055em;
+  color: var(--journey-title);
+  margin: 0 0 15px;
+}
+
+.journey-heading h2 em {
+  color: #7c9d83;
+  font-weight: 400;
+}
+
+.journey-intro {
+  font-size: 1rem;
+  color: var(--journey-muted);
+  max-width: 75ch;
+  line-height: 1.75;
+}
+
+/* TWO COLUMNS */
+
+.journey-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.06fr);
+  gap: clamp(32px, 4vw, 65px);
+  align-items: start;
+}
+
+.achievement-column,
+.experience-column {
+  min-width: 0;
+}
+
+.experience-column {
+  border-left: 1px solid var(--journey-border);
+  padding-left: clamp(24px, 3vw, 45px);
+}
+
+/* COLUMN HEADINGS */
+
+.journey-column-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  margin-bottom: 30px;
+}
+
+.journey-heading-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--journey-accent);
+  color: #ffffff;
+}
+
+.journey-heading-icon svg {
+  width: 25px;
+  height: 25px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.journey-column-heading h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  line-height: 1.2;
+  color: var(--journey-title);
+  margin: 0 0 8px;
+}
+
+.journey-column-heading p {
+  color: var(--journey-muted);
+  font-size: 0.87rem;
+  line-height: 1.65;
+}
+
+/* ==========================================
+   ACHIEVEMENTS
+=========================================== */
+
+.achievement-group {
+  margin-bottom: 22px;
+  padding: 20px;
+  border-radius: 20px;
+
+  background: color-mix(
+    in srgb,
+    var(--journey-card) 66%,
+    transparent
+  );
+
+  border: 1px solid var(--journey-border);
+}
+
+.achievement-group-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-bottom: 18px;
+}
+
+.achievement-group-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+
+  background: var(--journey-soft);
+  color: var(--journey-accent);
+  font-size: 1.4rem;
+}
+
+.achievement-group-title h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--journey-title);
+  margin: 0 0 4px;
+}
+
+.achievement-group-title p {
+  color: var(--journey-muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.achievement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+/* ACHIEVEMENT ROW */
+
+.achievement-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-width: 0;
+  padding: 13px;
+  border-radius: 14px;
+
+  background: var(--journey-card);
+  border: 1px solid var(--journey-border);
+  box-shadow: var(--journey-shadow);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.achievement-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--journey-accent);
+  box-shadow: 0 12px 25px rgba(30, 75, 45, 0.09);
+}
+
+.achievement-symbol {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+
+  color: var(--journey-title);
+  background: var(--journey-soft);
+  font-size: 1.1rem;
+}
+
+.cert-symbol {
+  font-family: var(--body, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.codex-symbol {
+  font-family: var(--body, sans-serif);
+  background: #153b2c;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.achievement-copy {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  gap: 4px;
+}
+
+.achievement-copy strong {
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--journey-title);
+}
+
+.achievement-copy small {
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--journey-muted);
+}
+
+.achievement-tag {
+  display: inline-block;
+  flex-shrink: 0;
+
+  padding: 6px 10px;
+  border-radius: 100px;
+
+  background: var(--journey-soft);
+  color: var(--journey-title);
+
+  font-size: 0.68rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ==========================================
+   EXPERIENCE TIMELINE
+=========================================== */
+
+.experience-timeline {
+  position: relative;
+  padding: 15px 0 10px;
+}
+
+/* CENTRAL LINE */
+
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 50%;
+
+  width: 2px;
+  transform: translateX(-50%);
+  background: var(--journey-line);
+}
+
+/* TIMELINE ENTRY */
+
+.experience-entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 26px;
+  min-width: 0;
+}
+
+.experience-entry:last-child {
+  margin-bottom: 0;
+}
+
+/* CENTRAL DOT */
+
+.experience-node {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 13px;
+  height: 13px;
+  border: 3px solid var(--journey-line);
+  background: var(--journey-bg);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* ALTERNATING ALIGNMENT */
+
+.experience-entry.right .experience-card {
+  grid-column: 2;
+}
+
+.experience-entry.left .experience-card {
+  grid-column: 1;
+}
+
+/* EXPERIENCE CARD */
+
+.experience-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+
+  min-width: 0;
+  padding: 18px;
+
+  border-radius: 17px;
+  background: var(--journey-card);
+  border: 1px solid var(--journey-border);
+  box-shadow: var(--journey-shadow);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--journey-accent);
+  box-shadow: 0 14px 30px rgba(30, 75, 45, 0.11);
+}
+
+/* SMALL POINTERS */
+
+.experience-entry.right .experience-card::before,
+.experience-entry.left .experience-card::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  width: 10px;
+  height: 10px;
+
+  background: var(--journey-card);
+  border: 1px solid var(--journey-border);
+  transform: rotate(45deg);
+}
+
+.experience-entry.right .experience-card::before {
+  left: -6px;
+  border-top: 0;
+  border-right: 0;
+}
+
+.experience-entry.left .experience-card::before {
+  right: -6px;
+  border-bottom: 0;
+  border-left: 0;
+}
+
+/* EXPERIENCE ICON */
+
+.experience-role-icon {
+  display: grid;
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+
+  background: var(--journey-soft);
+  color: var(--journey-accent);
+
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.experience-card-content {
+  width: 100%;
+  min-width: 0;
+}
+
+.experience-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 8px;
+}
+
+.experience-card h4 {
+  color: var(--journey-title);
+  font-family: var(--body, sans-serif);
+  font-size: 0.89rem;
+  font-weight: 700;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.experience-card small {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--journey-accent);
+  margin-bottom: 8px;
+}
+
+.experience-card p {
+  color: var(--journey-muted);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  overflow-wrap: break-word;
+}
+
+.experience-period {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 100px;
+
+  background: var(--journey-soft);
+  color: var(--journey-title);
+
+  font-size: 0.67rem;
+  white-space: nowrap;
+}
+
+/* ==========================================
+   DARK MODE
+=========================================== */
+
+:root[data-theme="dark"] {
+  --journey-bg: #121d16;
+  --journey-card: #1d3023;
+  --journey-title: #e9f4e9;
+  --journey-text: #d0dfd1;
+  --journey-muted: #b0c2b3;
+  --journey-accent: #a0c5a5;
+  --journey-soft: #2b4633;
+  --journey-border: #385440;
+  --journey-line: #719b7d;
+  --journey-shadow: 0 10px 30px rgba(0,0,0,0.13);
+}
+
+/* SYSTEM DARK MODE */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --journey-bg: #121d16;
+    --journey-card: #1d3023;
+    --journey-title: #e9f4e9;
+    --journey-text: #d0dfd1;
+    --journey-muted: #b0c2b3;
+    --journey-accent: #a0c5a5;
+    --journey-soft: #2b4633;
+    --journey-border: #385440;
+    --journey-line: #719b7d;
+    --journey-shadow: 0 10px 30px rgba(0,0,0,0.13);
+  }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+=========================================== */
+
+/* SMALL LAPTOPS / TABLETS */
+
+@media (max-width: 1200px) {
+
+  .journey-layout {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .experience-column {
+    border-left: 0;
+    border-top: 1px solid var(--journey-border);
+    padding-left: 0;
+    padding-top: 40px;
+  }
+
+  .experience-entry {
+    gap: 40px;
+  }
+}
+
+/* EXPERIENCE CARDS ON SMALL SCREENS */
+
+@media (max-width: 760px) {
+
+  .journey-section {
+    padding: 65px 0 75px;
+  }
+
+  .journey-heading {
+    margin-bottom: 40px;
+  }
+
+  .journey-section .journey-heading h2 {
+    font-size: clamp(2.4rem, 9vw, 4rem);
+  }
+
+  .experience-timeline::before {
+    left: 10px;
+    transform: none;
+  }
+
+  .experience-entry {
+    grid-template-columns: 1fr;
+    padding-left: 35px;
+    gap: 0;
+  }
+
+  .experience-entry.left .experience-card,
+  .experience-entry.right .experience-card {
+    grid-column: 1;
+  }
+
+  .experience-node {
+    left: 11px;
+    transform: translateX(-50%);
+  }
+
+  .experience-entry.left .experience-card::before,
+  .experience-entry.right .experience-card::before {
+    left: -6px;
+    right: auto;
+    border: 1px solid var(--journey-border);
+    border-top: 0;
+    border-right: 0;
+  }
+}
+
+/* SMALL MOBILE PHONES */
+
+@media (max-width: 480px) {
+
+  .achievement-group {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .achievement-item {
+    flex-wrap: wrap;
+    padding: 12px;
+  }
+
+  .achievement-copy {
+    flex-basis: calc(100% - 55px);
+  }
+
+  .achievement-tag {
+    margin-left: 50px;
+  }
+
+  .journey-column-heading h3 {
+    font-size: 1.35rem;
+  }
+
+  .experience-card {
+    padding: 16px;
+  }
+
+  .experience-card h4 {
+    font-size: 0.88rem;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .achievement-item,
+  .experience-card {
+    transition: none;
+  }
+
+  .achievement-item:hover,
+  .experience-card:hover {
+    transform: none;
+  }
+}
+
+
+/* ==========================================
+   SEPARATE ACHIEVEMENTS & EXPERIENCE
+========================================== */
+
+/* ACHIEVEMENTS SECTION */
+
+.achievements-section {
+  background:
+    radial-gradient(
+      ellipse at 85% 12%,
+      rgba(120, 158, 127, 0.10),
+      transparent 35%
+    ),
+    var(--journey-bg);
+}
+
+.achievements-section .achievement-column {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+/* Full width heading inside achievements */
+
+.achievements-section
+.achievement-column
+.journey-column-heading {
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+/* Category cards displayed side by side */
+
+.achievements-section .achievement-group {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  margin-bottom: 0;
+
+  padding: 24px;
+  border-radius: 20px;
+
+  background: var(--journey-card);
+  border: 1px solid var(--journey-border);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Preserve individual achievement rows */
+
+.achievements-section .achievement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.achievements-section .achievement-item {
+  min-width: 0;
+}
+
+/* Subtle hover */
+
+@media (hover: hover) {
+  .achievements-section .achievement-group:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(23,61,44,0.07);
+  }
+}
+
+/* ==========================================
+   EXPERIENCE SECTION
+========================================== */
+
+.experience-section {
+  background: var(--journey-bg);
+  border-top: 1px solid var(--journey-border);
+}
+
+/* Give the alternating timeline full width */
+
+.experience-section .experience-column {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  border: none;
+  padding: 0;
+}
+
+/* Keep the center-aligned timeline */
+
+@media (min-width: 761px) {
+  .experience-section .experience-timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .experience-section .experience-entry {
+    grid-template-columns:
+      minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .experience-section
+  .experience-entry.left
+  .experience-card {
+    grid-column: 1;
+  }
+
+  .experience-section
+  .experience-entry.right
+  .experience-card {
+    grid-column: 2;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 850px) {
+  .achievements-section .achievement-column {
+    grid-template-columns: 1fr;
+  }
+
+  .achievements-section
+  .achievement-column
+  .journey-column-heading {
+    grid-column: 1;
+  }
+
+  .achievements-section .achievement-group {
+    height: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .experience-section .experience-column {
+    border: 0;
+    padding: 0;
+  }
+
+  .experience-section .experience-timeline::before {
+    left: 10px;
+    transform: none;
+  }
+
+  .experience-section .experience-entry {
+    grid-template-columns: minmax(0, 1fr);
+    padding-left: 35px;
+  }
+
+  .experience-section
+  .experience-entry.left
+  .experience-card,
+  .experience-section
+  .experience-entry.right
+  .experience-card {
+    grid-column: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .achievements-section .achievement-group {
+    transition: none;
+  }
+
+  .achievements-section .achievement-group:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================
+   ACHIEVEMENTS - 2 COLUMN CARD LAYOUT
+========================================== */
+
+.achievements-section .achievement-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+/* Make the section heading span full width */
+.achievements-section .journey-column-heading {
+  grid-column: 1 / -1;
+}
+
+/* Each achievement group becomes one card */
+.achievements-section .achievement-group {
+  margin-bottom: 0;
+  height: 100%;
+}
+
+/* Mobile / tablet fallback */
+@media (max-width: 850px) {
+  .achievements-section .achievement-column {
+    grid-template-columns: 1fr;
+  }
+
+  .achievements-section .journey-column-heading {
+    grid-column: 1;
+  }
+}
+
+
+/* ==========================================
+   EXPERIENCE SPACING AND ALIGNMENT
+========================================== */
+
+.experience-section {
+  padding-top: 70px;
+  padding-bottom: 75px;
+}
+
+/* Consistent section alignment */
+.experience-section > .container {
+  width: min(100% - 3rem, 1400px);
+  margin-inline: auto;
+}
+
+/* Heading closer to timeline */
+.experience-section .journey-column-heading {
+  margin-bottom: 20px;
+}
+
+/* Compact timeline */
+.experience-section .experience-timeline {
+  padding-top: 8px;
+  padding-bottom: 0;
+}
+
+/* Less space between entries */
+.experience-section .experience-entry {
+  margin-bottom: 12px;
+}
+
+/* Remove trailing space */
+.experience-section .experience-entry:last-child {
+  margin-bottom: 0;
+}
+
+/* More compact cards */
+.experience-section .experience-card {
+  padding: 16px 20px;
+  gap: 6px;
+}
+
+/* Smaller spacing inside cards */
+.experience-section .experience-card-top {
+  margin-bottom: 5px;
+}
+
+.experience-section .experience-card small {
+  margin-bottom: 5px;
+}
+
+.experience-section .experience-card p {
+  line-height: 1.55;
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+  .experience-section {
+    padding-top: 55px;
+    padding-bottom: 60px;
+  }
+
+  .experience-section .experience-entry {
+    margin-bottom: 15px;
+  }
+
+  .experience-section .experience-card {
+    padding: 15px;
+  }
+}
+
+
+/* ==========================================
+   FINAL EXPERIENCE LAYOUT FIX
+   DUCHESS GREEN PORTFOLIO
+========================================== */
+
+/* Consistent section spacing */
+
+.achievements-section,
+.experience-section {
+  padding-top: 70px;
+  padding-bottom: 75px;
+}
+
+/* Same container width */
+
+.achievements-section > .container,
+.experience-section > .container {
+  width: min(100% - 3rem, 1400px);
+  margin-inline: auto;
+}
+
+/* Remove outdated combined-layout styling */
+
+.experience-section .experience-column {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Identical heading spacing */
+
+.achievements-section .journey-column-heading,
+.experience-section .journey-column-heading {
+  margin-bottom: 28px;
+}
+
+/* Keep timeline aligned within the container */
+
+.experience-section .experience-timeline {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Main timeline line */
+
+.experience-section .experience-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: var(--journey-line);
+}
+
+/* Compact alternating rows */
+
+.experience-section .experience-entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 32px;
+  margin: 0 0 14px;
+  align-items: start;
+}
+
+.experience-section .experience-entry:last-child {
+  margin-bottom: 0;
+}
+
+/* Preserve left-right alternating layout */
+
+.experience-section .experience-entry.left
+.experience-card {
+  grid-column: 1;
+}
+
+.experience-section .experience-entry.right
+.experience-card {
+  grid-column: 2;
+}
+
+/* Compact cards */
+
+.experience-section .experience-card {
+  min-width: 0;
+  padding: 16px 20px;
+  gap: 6px;
+  border-radius: 15px;
+}
+
+/* Compact icons */
+
+.experience-section .experience-role-icon {
+  width: 32px;
+  height: 32px;
+  font-size: 0.9rem;
+}
+
+/* Text spacing */
+
+.experience-section .experience-card-top {
+  margin-bottom: 4px;
+  gap: 6px;
+}
+
+.experience-section .experience-card h4 {
+  font-size: 0.91rem;
+  line-height: 1.4;
+}
+
+.experience-section .experience-card small {
+  font-size: 0.76rem;
+  margin-bottom: 5px;
+}
+
+.experience-section .experience-card p {
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+/* Timeline nodes */
+
+.experience-section .experience-node {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Card arrows */
+
+.experience-section
+.experience-entry .experience-card::before {
+  top: 20px;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 850px) {
+  .achievements-section .achievement-column {
+    grid-template-columns: 1fr;
+  }
+
+  .achievements-section .journey-column-heading {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 760px) {
+
+  .achievements-section,
+  .experience-section {
+    padding-top: 55px;
+    padding-bottom: 60px;
+  }
+
+  .experience-section .experience-timeline::before {
+    left: 10px;
+    transform: none;
+  }
+
+  .experience-section .experience-entry {
+    grid-template-columns: minmax(0, 1fr);
+    padding-left: 35px;
+    margin-bottom: 16px;
+    column-gap: 0;
+  }
+
+  .experience-section
+  .experience-entry.left .experience-card,
+  .experience-section
+  .experience-entry.right .experience-card {
+    grid-column: 1;
+  }
+
+  .experience-section .experience-node {
+    left: 11px;
+  }
+
+  .experience-section .experience-card {
+    padding: 15px;
+  }
+
+  .experience-section
+  .experience-entry.left .experience-card::before,
+  .experience-section
+  .experience-entry.right .experience-card::before {
+    left: -6px;
+    right: auto;
+    border: 1px solid var(--journey-border);
+    border-top: 0;
+    border-right: 0;
+  }
+}
