@@ -1,14 +1,20 @@
+
 document.documentElement.classList.add("js");
 
 var $ = function(s, c) {
   return (c || document).querySelector(s);
 };
+
 var $$ = function(s, c) {
   return [].slice.call((c || document).querySelectorAll(s));
 };
+
 var still = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* Mobile menu */
+/* =========================================
+   1. MOBILE NAVIGATION
+========================================= */
+
 var links = $("#links"),
     mb = $("#menuBtn");
 
@@ -24,12 +30,18 @@ links.onclick = function(e) {
   }
 };
 
-/* Theme toggle */
+/* =========================================
+   2. LIGHT / DARK THEME
+========================================= */
+
 var root = document.documentElement;
 
 try {
   var saved = localStorage.getItem("theme");
-  if (saved) root.setAttribute("data-theme", saved);
+
+  if (saved) {
+    root.setAttribute("data-theme", saved);
+  }
 } catch(e) {}
 
 $("#theme").onclick = function() {
@@ -37,14 +49,20 @@ $("#theme").onclick = function() {
     root.getAttribute("data-theme") === "dark" ||
     (!root.getAttribute("data-theme") &&
       matchMedia("(prefers-color-scheme: dark)").matches);
+
   var next = dark ? "light" : "dark";
+
   root.setAttribute("data-theme", next);
+
   try {
     localStorage.setItem("theme", next);
   } catch(e) {}
 };
 
-/* Scroll progress, active navigation, back-to-top */
+/* =========================================
+   3. SCROLL PROGRESS + ACTIVE NAVIGATION
+========================================= */
+
 var secs = $$("main section[id]");
 var anchors = $$(".links a");
 
@@ -54,107 +72,96 @@ function onScroll() {
 
   $("#progress").style.width =
     (max > 0 ? scrollY / max * 100 : 0) + "%";
+
   var cur = "home";
 
   secs.forEach(function(s) {
-    if (s.offsetTop <= scrollY + 140)
+    if (s.offsetTop <= scrollY + 140) {
       cur = s.id;
+    }
   });
 
-
   anchors.forEach(function(a) {
-
     a.classList.toggle(
       "active",
       a.getAttribute("href") === "#" + cur
     );
-
   });
-
 
   $("#top").classList.toggle(
     "show",
     scrollY > 600
   );
-
 }
 
-
-addEventListener("scroll", onScroll, {passive:true});
+addEventListener("scroll", onScroll, {
+  passive: true
+});
 
 onScroll();
 
+/* Back to top */
 
 $("#top").onclick = function() {
-  scrollTo({top:0});
+  scrollTo({
+    top: 0,
+    behavior: still ? "auto" : "smooth"
+  });
 };
 
-
-
-/* Reveal animation + counters */
+/* =========================================
+   4. SCROLL REVEAL + ANIMATED COUNTERS
+========================================= */
 
 function count(el) {
-
   var n = +el.dataset.count;
   var t0 = null;
 
-
-  if(still) {
+  if (still) {
     el.textContent = n;
     return;
   }
 
-
-  (function step(t){
-
+  function step(t) {
     t0 = t0 || t;
 
     var p = Math.min((t - t0) / 900, 1);
 
     el.textContent = Math.round(n * p);
 
-    if(p < 1)
+    if (p < 1) {
       requestAnimationFrame(step);
+    }
+  }
 
-  })(performance.now());
-
+  requestAnimationFrame(step);
 }
 
-
-var io = new IntersectionObserver(function(es){
-
-  es.forEach(function(e){
-
-    if(e.isIntersecting){
-
+var io = new IntersectionObserver(function(es) {
+  es.forEach(function(e) {
+    if (e.isIntersecting) {
       e.target.classList.add("in");
 
-      $$("[data-count]", e.target)
-        .forEach(count);
+      $$("[data-count]", e.target).forEach(count);
 
       io.unobserve(e.target);
-
     }
-
   });
-
-
-},{threshold:.15});
-
-
-$$(".reveal").forEach(function(el){
-
-  io.observe(el);
-
+}, {
+  threshold: 0.15
 });
 
+$$(".reveal").forEach(function(el) {
+  io.observe(el);
+});
 
-
-/* Typing effect */
+/* =========================================
+   5. ANIMATED TYPING EFFECT
+========================================= */
 
 var roles = [
+  "Aspiring Web Developer",
   "BSIT Student",
-  "Web Development Enthusiast",
   "Problem Solver",
   "Always Learning"
 ];
@@ -164,468 +171,326 @@ var ri = 0,
     del = false,
     tEl = $("#typed");
 
-
-function type(){
-
+function type() {
   var w = roles[ri];
 
-  tEl.textContent = w.slice(0,ci);
+  tEl.textContent = w.slice(0, ci);
 
-
-  if(!del && ci === w.length){
-
+  if (!del && ci === w.length) {
     del = true;
-
-    return setTimeout(type,1500);
-
+    return setTimeout(type, 1500);
   }
 
-
-  if(del && ci === 0){
-
+  if (del && ci === 0) {
     del = false;
-
     ri = (ri + 1) % roles.length;
-
   }
-
 
   ci += del ? -1 : 1;
-
 
   setTimeout(
     type,
     del ? 40 : 80
   );
-
 }
 
-
-if(still)
+if (still) {
   tEl.textContent = roles[0];
-else
+} else {
   type();
+}
 
+/* =========================================
+   6. DUCHESS GREEN PARTICLE BACKGROUND
+========================================= */
 
-
-
-/* Hero network animation */
-
-(function(){
-
+(function() {
   var c = $("#net");
-
   var x = c.getContext("2d");
 
   var pts = [];
 
   var m = {
-    x:-999,
-    y:-999
+    x: -999,
+    y: -999
   };
 
-  var W,H;
-
+  var W, H;
   var hero = $("#home");
 
-
-  function size(){
-
+  function size() {
     W = c.width = hero.clientWidth;
-
     H = c.height = hero.clientHeight;
 
-    pts=[];
+    pts = [];
 
-
-    for(
-      var i=0,
-      n=Math.min(80,Math.floor(W*H/13000));
-      i<n;
+    for (
+      var i = 0,
+      n = Math.min(80, Math.floor(W * H / 13000));
+      i < n;
       i++
-    ){
-
+    ) {
       pts.push({
-
-        x:Math.random()*W,
-
-        y:Math.random()*H,
-
-        vx:(Math.random()-.5)*.35,
-
-        vy:(Math.random()-.5)*.35
-
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35
       });
-
     }
-
   }
 
+  function draw() {
+    x.clearRect(0, 0, W, H);
 
-
-  function draw(){
-
-    x.clearRect(0,0,W,H);
-
-
-    pts.forEach(function(p,i){
-
+    pts.forEach(function(p, i) {
       p.x += p.vx;
-
       p.y += p.vy;
 
-
-      if(p.x<0 || p.x>W)
+      if (p.x < 0 || p.x > W) {
         p.vx *= -1;
-
-
-      if(p.y<0 || p.y>H)
-        p.vy *= -1;
-
-
-
-      var dx=p.x-m.x;
-
-      var dy=p.y-m.y;
-
-      var d=Math.hypot(dx,dy);
-
-
-      if(d<120 && d>0){
-
-        p.x += dx/d*1.5;
-
-        p.y += dy/d*1.5;
-
       }
 
+      if (p.y < 0 || p.y > H) {
+        p.vy *= -1;
+      }
 
+      var dx = p.x - m.x;
+      var dy = p.y - m.y;
 
-      x.fillStyle =
-      "rgba(165,180,252,.75)";
+      var d = Math.hypot(dx, dy);
 
+      if (d < 120 && d > 0) {
+        p.x += dx / d * 1.5;
+        p.y += dy / d * 1.5;
+      }
+
+      // Duchess Green particles
+      x.fillStyle = "rgba(36,91,61,.55)";
 
       x.beginPath();
-
-      x.arc(
-        p.x,
-        p.y,
-        1.8,
-        0,
-        7
-      );
-
+      x.arc(p.x, p.y, 1.8, 0, 7);
       x.fill();
 
+      // Connecting particle lines
+      for (var j = i + 1; j < pts.length; j++) {
+        var q = pts[j];
 
-
-      for(var j=i+1;j<pts.length;j++){
-
-        var q=pts[j];
-
-        var e=Math.hypot(
-          p.x-q.x,
-          p.y-q.y
+        var e = Math.hypot(
+          p.x - q.x,
+          p.y - q.y
         );
 
-
-        if(e<125){
-
+        if (e < 125) {
           x.strokeStyle =
-          "rgba(165,180,252,"+
-          (.28*(1-e/125))+")";
-
+            "rgba(36,91,61," +
+            (.28 * (1 - e / 125)) +
+            ")";
 
           x.beginPath();
-
-          x.moveTo(
-            p.x,
-            p.y
-          );
-
-          x.lineTo(
-            q.x,
-            q.y
-          );
-
+          x.moveTo(p.x, p.y);
+          x.lineTo(q.x, q.y);
           x.stroke();
-
         }
-
       }
-
-
     });
 
-
-    if(!still)
+    if (!still) {
       requestAnimationFrame(draw);
-
+    }
   }
 
-
-
   hero.addEventListener(
     "pointermove",
-    function(e){
+    function(e) {
+      var r = c.getBoundingClientRect();
 
-      var r=c.getBoundingClientRect();
-
-      m.x=e.clientX-r.left;
-
-      m.y=e.clientY-r.top;
-
+      m.x = e.clientX - r.left;
+      m.y = e.clientY - r.top;
     }
   );
-
 
   hero.addEventListener(
     "pointerleave",
-    function(){
-
-      m.x=m.y=-999;
-
+    function() {
+      m.x = -999;
+      m.y = -999;
     }
   );
 
-
-  addEventListener(
-    "resize",
-    size
-  );
-
+  addEventListener("resize", size);
 
   size();
-
   draw();
-
-
 })();
 
+/* =========================================
+   7. INTERACTIVE PROJECT CARD TILT
+========================================= */
 
-
-
-/* Card tilt */
-
-function tilt(el,max){
-
+function tilt(el, max) {
   el.addEventListener(
     "pointermove",
-    function(e){
-
-      if(still || e.pointerType==="touch")
+    function(e) {
+      if (still || e.pointerType === "touch") {
         return;
+      }
 
+      var r = el.getBoundingClientRect();
 
-      var r=el.getBoundingClientRect();
-
-
-      var px=(e.clientX-r.left)/r.width-.5;
-
-      var py=(e.clientY-r.top)/r.height-.5;
-
+      var px = (e.clientX - r.left) / r.width - 0.5;
+      var py = (e.clientY - r.top) / r.height - 0.5;
 
       el.style.transform =
-      "perspective(800px) rotateX("+
-      (-py*max)+
-      "deg) rotateY("+
-      (px*max)+
-      "deg)";
-
+        "perspective(800px) rotateX(" +
+        (-py * max) +
+        "deg) rotateY(" +
+        (px * max) +
+        "deg)";
     }
   );
-
 
   el.addEventListener(
     "pointerleave",
-    function(){
-
-      el.style.transform="";
-
+    function() {
+      el.style.transform = "";
     }
   );
-
 }
 
+// Hero code card was replaced by the
+// circular profile image placeholder.
 
-tilt($("#tilt"),6);
-
-$$(".card").forEach(function(c){
-
-  tilt(c,4);
-
+$$(".card").forEach(function(c) {
+  tilt(c, 4);
 });
 
-
-
-/* Skills tabs */
+/* =========================================
+   8. INTERACTIVE SKILLS TABS
+========================================= */
 
 var tabs = $$(".tab");
 
-
-function pick(t){
-
-  tabs.forEach(function(b){
-
+function pick(t) {
+  tabs.forEach(function(b) {
     var on = b === t;
-
 
     b.setAttribute(
       "aria-selected",
       on
     );
 
-
     b.tabIndex = on ? 0 : -1;
 
+    var p = $("#" + b.getAttribute("aria-controls"));
 
-    var p=$("#"+b.getAttribute("aria-controls"));
+    p.classList.toggle("show", on);
 
-
-    p.classList.toggle(
-      "show",
-      on
-    );
-
-
-    if(on)
-
-      $$(".skill",p)
-      .forEach(function(s,i){
-
-        s.style.animationDelay =
-        i*60+"ms";
-
+    if (on) {
+      $$(".skill", p).forEach(function(s, i) {
+        s.style.animationDelay = i * 60 + "ms";
       });
-
-
+    }
   });
 
-
   t.focus();
-
 }
 
-
-
-tabs.forEach(function(t,i){
-
-  t.onclick=function(){
-
+tabs.forEach(function(t, i) {
+  t.onclick = function() {
     pick(t);
-
   };
 
-
-  t.onkeydown=function(e){
-
-    if(
-      e.key==="ArrowRight" ||
-      e.key==="ArrowLeft"
-    )
-
-      pick(
-        tabs[(i+1)%tabs.length]
-      );
-
+  t.onkeydown = function(e) {
+    if (
+      e.key === "ArrowRight" ||
+      e.key === "ArrowLeft"
+    ) {
+      pick(tabs[(i + 1) % tabs.length]);
+    }
   };
-
 });
 
+/* =========================================
+   9. PROJECT DETAILS MODAL
+========================================= */
 
+var data = {
+  uma: {
+    t: "UMA",
+    s: "Local Farmers E-Commerce Platform",
+    d: "Connects local farmers directly with consumers.",
+    f: [
+      "Product search",
+      "Shopping cart",
+      "Online purchasing",
+      "Direct farmer-to-consumer messaging"
+    ]
+  },
 
-/* Project dialog */
+  vault: {
+    t: "Recipe Vault",
+    s: "Community Recipe-Sharing Platform",
+    d: "A community space for finding and sharing recipes.",
+    f: [
+      "Recipe discovery",
+      "Bookmarks",
+      "User discussions",
+      "Ratings",
+      "Featured popular chefs and recipes"
+    ]
+  },
 
-var data={
-
-uma:{
-t:"UMA",
-s:"Local Farmers E-Commerce Platform",
-d:"Connects local farmers directly with consumers.",
-f:[
-"Product search",
-"Shopping cart",
-"Online purchasing",
-"Direct farmer-to-consumer messaging"
-]
-},
-
-
-vault:{
-t:"Recipe Vault",
-s:"Community Recipe-Sharing Platform",
-d:"A community space for finding and sharing recipes.",
-f:[
-"Recipe discovery",
-"Bookmarks",
-"User discussions",
-"Ratings",
-"Featured popular chefs and recipes"
-]
-},
-
-
-gis:{
-t:"Where Am I?",
-s:"GIS-Based Navigation System",
-d:"Helps users find their way around complex institutions.",
-f:[
-"Digital maps",
-"Building information",
-"Indoor directions"
-]
-}
-
+  gis: {
+    t: "Where Am I?",
+    s: "GIS-Based Navigation System",
+    d: "Helps users find their way around complex institutions.",
+    f: [
+      "Digital maps",
+      "Building information",
+      "Indoor directions"
+    ]
+  }
 };
 
+var dlg = $("#dlg");
 
+$$(".more").forEach(function(b) {
+  b.onclick = function() {
+    var p = data[b.dataset.project];
 
-var dlg=$("#dlg");
-
-
-$$(".more").forEach(function(b){
-
-  b.onclick=function(){
-
-    var p=data[b.dataset.project];
-
-
-    $("#dTitle").textContent=p.t;
-
-    $("#dSub").textContent=p.s;
-
-    $("#dText").textContent=p.d;
-
+    $("#dTitle").textContent = p.t;
+    $("#dSub").textContent = p.s;
+    $("#dText").textContent = p.d;
 
     $("#dList").innerHTML =
-    p.f.map(function(f){
-
-      return '<li><svg class="ico"><use href="#i-check"/></svg>'+f+"</li>";
-
-    }).join("");
-
+      p.f.map(function(f) {
+        return (
+          '<li><svg class="ico">' +
+          '<use href="#i-check"/></svg>' +
+          f +
+          "</li>"
+        );
+      }).join("");
 
     dlg.showModal();
-
-  }
-
+  };
 });
 
-
+/* Close modal */
 
 $("#dClose").onclick =
-$("#dOk").onclick=function(){
-
+$("#dOk").onclick = function() {
   dlg.close();
-
 };
 
-dlg.addEventListener(
-"click",
-function(e){
-
-  if(e.target===dlg)
+dlg.addEventListener("click", function(e) {
+  if (e.target === dlg) {
     dlg.close();
+  }
 });
-$("#year").textContent =
-new Date().getFullYear();
+
+/* =========================================
+   10. AUTOMATIC FOOTER YEAR
+========================================= */
+
+$("#year").textContent = new Date().getFullYear();
