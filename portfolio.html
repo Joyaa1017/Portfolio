@@ -1,189 +1,1060 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Jumeirah Joy A. Bayotas | BSIT Portfolio</title>
-<meta name="description" content="Portfolio of Jumeirah Joy A. Bayotas, a 4th-year BSIT student at Davao del Norte State College.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
-<symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
-<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
-<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
-<symbol id="i-up" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></symbol>
-<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
-<symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
-<symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
-<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></symbol>
-<symbol id="i-git" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="8" r="2.5"/><path d="M6 8.5v7M18 10.5c0 4-6 3-11 6"/></symbol>
-<symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6A8 8 0 1 1 21 12z"/></symbol>
-<symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
-<symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M12 3a2 2 0 0 1 2 2v1h4v4h-1a2 2 0 0 0 0 4h1v4h-4v-1a2 2 0 0 0-4 0v1H6v-4h1a2 2 0 0 0 0-4H6V6h4V5a2 2 0 0 1 2-2z"/></symbol>
-<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
-<symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></symbol>
-<symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></symbol>
-<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></symbol>
-<symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
-<symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
-<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
-<symbol id="i-gh" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3.1-.3 6.4-1.5 6.4-7A5.4 5.4 0 0 0 20 4.8 5 5 0 0 0 19.9 1S18.7.7 16 2.5a13.4 13.4 0 0 0-7 0C6.3.7 5.1 1 5.1 1A5 5 0 0 0 5 4.8a5.4 5.4 0 0 0-1.5 3.7c0 5.4 3.3 6.6 6.4 7a3.4 3.4 0 0 0-1 2.6V22"/></symbol>
-<symbol id="i-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
-</svg>
-<a class="skip" href="#main">Skip to content</a>
-<div id="progress"></div>
-
-<header>
-  <nav class="container nav" aria-label="Main navigation">
-    <a class="brand" href="#home">Jumeirah Joy</a>
-    <div class="right">
-      <ul class="links" id="links">
-        <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="icon-btn" id="theme" aria-label="Toggle light or dark theme"><svg class="ico sun"><use href="#i-sun"/></svg><svg class="ico moon"><use href="#i-moon"/></svg></button>
-      <button class="icon-btn" id="menuBtn" aria-expanded="false" aria-controls="links" aria-label="Toggle menu"><svg class="ico"><use href="#i-menu"/></svg></button>
-    </div>
-  </nav>
-</header>
-
-<main id="main">
-  <section class="hero" id="home">
-    <canvas id="net" aria-hidden="true"></canvas>
-    <div class="container hero-grid">
-      <div>
-        <h1>Jumeirah Joy A. Bayotas</h1>
-        <p class="typed" id="typed" aria-live="off"></p>
-        <p class="intro">I'm a 4th-year IT student who builds web applications and keeps growing my technical and problem-solving skills with every project.</p>
-        <div class="actions">
-          <a class="btn primary" href="#projects">View My Projects</a>
-          <a class="btn ghost" href="#contact">Get in Touch</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+      name="viewport"
+    />
+    <title>Jumeirah Joy A. Bayotas | BSIT Portfolio</title>
+    <meta
+      content="Portfolio of Jumeirah Joy A. Bayotas, a 4th-year BSIT student at Davao del Norte State College."
+      name="description"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <svg aria-hidden="true" height="0" style="position: absolute" width="0">
+      <symbol id="i-sun" viewbox="0 0 24 24">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path
+          d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+        ></path>
+      </symbol>
+      <symbol id="i-moon" viewbox="0 0 24 24">
+        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+      </symbol>
+      <symbol id="i-menu" viewbox="0 0 24 24">
+        <path d="M4 7h16M4 12h16M4 17h16"></path>
+      </symbol>
+      <symbol id="i-x" viewbox="0 0 24 24">
+        <path d="M18 6 6 18M6 6l12 12"></path>
+      </symbol>
+      <symbol id="i-up" viewbox="0 0 24 24">
+        <path d="m6 15 6-6 6 6"></path>
+      </symbol>
+      <symbol id="i-check" viewbox="0 0 24 24">
+        <path d="m5 12 5 5 9-10"></path>
+      </symbol>
+      <symbol id="i-code" viewbox="0 0 24 24">
+        <path d="m16 18 6-6-6-6M8 6l-6 6 6 6"></path>
+      </symbol>
+      <symbol id="i-db" viewbox="0 0 24 24">
+        <ellipse cx="12" cy="5" rx="8" ry="3"></ellipse>
+        <path
+          d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"
+        ></path>
+      </symbol>
+      <symbol id="i-globe" viewbox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"></path>
+      </symbol>
+      <symbol id="i-git" viewbox="0 0 24 24">
+        <circle cx="6" cy="6" r="2.5"></circle>
+        <circle cx="6" cy="18" r="2.5"></circle>
+        <circle cx="18" cy="8" r="2.5"></circle>
+        <path d="M6 8.5v7M18 10.5c0 4-6 3-11 6"></path>
+      </symbol>
+      <symbol id="i-chat" viewbox="0 0 24 24">
+        <path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6A8 8 0 1 1 21 12z"></path>
+      </symbol>
+      <symbol id="i-users" viewbox="0 0 24 24">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+        <circle cx="9" cy="7" r="4"></circle>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"></path>
+      </symbol>
+      <symbol id="i-puzzle" viewbox="0 0 24 24">
+        <path
+          d="M12 3a2 2 0 0 1 2 2v1h4v4h-1a2 2 0 0 0 0 4h1v4h-4v-1a2 2 0 0 0-4 0v1H6v-4h1a2 2 0 0 0 0-4H6V6h4V5a2 2 0 0 1 2-2z"
+        ></path>
+      </symbol>
+      <symbol id="i-clock" viewbox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 6v6l4 2"></path>
+      </symbol>
+      <symbol id="i-shuffle" viewbox="0 0 24 24">
+        <path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"></path>
+      </symbol>
+      <symbol id="i-cart" viewbox="0 0 24 24">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path
+          d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"
+        ></path>
+      </symbol>
+      <symbol id="i-book" viewbox="0 0 24 24">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+        <path
+          d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+        ></path>
+      </symbol>
+      <symbol id="i-pin" viewbox="0 0 24 24">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </symbol>
+      <symbol id="i-mail" viewbox="0 0 24 24">
+        <rect height="16" rx="2" width="20" x="2" y="4"></rect>
+        <path d="m22 7-10 6L2 7"></path>
+      </symbol>
+      <symbol id="i-phone" viewbox="0 0 24 24">
+        <path
+          d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"
+        ></path>
+      </symbol>
+      <symbol id="i-gh" viewbox="0 0 24 24">
+        <path
+          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3.1-.3 6.4-1.5 6.4-7A5.4 5.4 0 0 0 20 4.8 5 5 0 0 0 19.9 1S18.7.7 16 2.5a13.4 13.4 0 0 0-7 0C6.3.7 5.1 1 5.1 1A5 5 0 0 0 5 4.8a5.4 5.4 0 0 0-1.5 3.7c0 5.4 3.3 6.6 6.4 7a3.4 3.4 0 0 0-1 2.6V22"
+        ></path>
+      </symbol>
+      <symbol id="i-in" viewbox="0 0 24 24">
+        <path
+          d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"
+        ></path>
+        <rect height="12" width="4" x="2" y="9"></rect>
+        <circle cx="4" cy="4" r="2"></circle>
+      </symbol>
+    </svg>
+    <a class="skip" href="#main"> Skip to content </a>
+    <div id="progress"></div>
+    <header>
+      <nav aria-label="Main navigation" class="container nav">
+        <a class="brand" href="#home">
+          <span aria-hidden="true" class="brand-monogram"> JJ </span>
+          <span> Jumeirah Joy. </span>
+        </a>
+        <div class="right">
+          <ul class="links" id="links">
+            <li>
+              <a href="#home"> Home </a>
+            </li>
+            <li>
+              <a href="#about"> About </a>
+            </li>
+            <li>
+              <a href="#skills"> Skills </a>
+            </li>
+            <li>
+              <a href="#projects"> Projects </a>
+            </li>
+            <li>
+              <a href="#achievements"> Achievements </a>
+            </li>
+            <li>
+              <a href="#experience"> Experience </a>
+            </li>
+            <li>
+              <a href="#contact"> Contact </a>
+            </li>
+          </ul>
+          <button
+            aria-label="Toggle light or dark theme"
+            class="icon-btn"
+            id="theme"
+          >
+            <svg class="ico sun">
+              <use href="#i-sun"></use>
+            </svg>
+            <svg class="ico moon">
+              <use href="#i-moon"></use>
+            </svg>
+          </button>
+          <button
+            aria-controls="links"
+            aria-expanded="false"
+            aria-label="Toggle menu"
+            class="icon-btn"
+            id="menuBtn"
+          >
+            <svg class="ico">
+              <use href="#i-menu"></use>
+            </svg>
+          </button>
         </div>
-      </div>
-      <div class="code" id="tilt" aria-hidden="true">
-        <div class="bar"><i></i><i></i><i></i></div>
-<pre><span class="k">const</span> <span class="v">jumeirah</span> = {
-  role: <span class="s">"BSIT Student"</span>,
-  school: <span class="s">"Davao del Norte State College"</span>,
-  year: <span class="n">4</span>,
-  skills: [<span class="s">"HTML/CSS"</span>, <span class="s">"JavaScript"</span>, <span class="s">"PHP"</span>],
-  learning: <span class="s">"every day"</span>
-};</pre>
-      </div>
-    </div>
-  </section>
-
-  <section class="section soft" id="about">
-    <div class="container about">
-      <div class="reveal">
-        <h2>About me</h2>
-        <p>Hi, I'm Jumeirah Joy. I enjoy turning ideas into working websites and systems, and I'm still learning with every project I build.</p>
-        <p>I care about clear code, thoughtful design, and tools that help real people. I work well in a team and pick up new technologies quickly when a project calls for them.</p>
-        <div class="stats">
-          <div class="stat"><b data-count="3">0</b><span>Projects</span></div>
-          <div class="stat"><b data-count="6">0</b><span>Technical skills</span></div>
-          <div class="stat"><b data-count="5">0</b><span>Soft skills</span></div>
-          <div class="stat"><b data-count="4">0</b><span>Year level</span></div>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero" id="home">
+        <canvas aria-hidden="true" id="net"> </canvas>
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Welcome to my portfolio</p>
+            <h1>
+              Hi There,
+              <br />
+              I'm
+              <span> Jumeirah Joy </span>
+            </h1>
+            <p aria-live="off" class="typed" id="typed">
+              Aspiring Web Developer
+            </p>
+            <p class="intro">
+              A 4th-year BSIT student who builds web applications and keeps
+              growing technical and problem-solving skills with every project.
+            </p>
+            <div class="actions">
+              <a class="btn primary" href="#about">
+                About Me
+                <span aria-hidden="true"> ↓ </span>
+              </a>
+            </div>
+            <div aria-label="Social links" class="socials">
+              <!-- GitHub -->
+              <a
+                aria-label="GitHub profile"
+                href="https://github.com/Joyaa1017"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <svg aria-hidden="true" class="ico">
+                  <use href="#i-gh"></use>
+                </svg>
+              </a>
+              <!-- LinkedIn -->
+              <a
+                aria-label="LinkedIn profile"
+                href="https://www.linkedin.com/in/jumeirah-joy-bayotas-a69990369/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <svg aria-hidden="true" class="ico">
+                  <use href="#i-in"></use>
+                </svg>
+              </a>
+              <!-- Facebook -->
+              <a
+                aria-label="Facebook profile"
+                href="https://www.facebook.com/profile.php?id=61590598911034"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="ico"
+                  viewbox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.19 2.23.19v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12Z"
+                    fill="currentColor"
+                    stroke="none"
+                  ></path>
+                </svg>
+              </a>
+              <!-- Gmail -->
+              <a
+                aria-label="Send email"
+                href="mailto:jumeirahjoybayotas@gmail.com"
+              >
+                <svg aria-hidden="true" class="ico">
+                  <use href="#i-mail"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <!-- Replace the placeholder with <img src="your-photo.jpg" alt="Portrait of Jumeirah Joy A. Bayotas"> when ready. -->
+          <div class="portrait-wrap">
+            <img
+              alt="Illustrated portrait of Jumeirah Joy A. Bayotas"
+              class="hero-profile-img"
+              fetchpriority="high"
+              src="img/Me.png"
+            />
+          </div>
         </div>
-      </div>
-      <div class="reveal">
-        <div class="panel">
-          <h3>Education</h3>
-          <p><strong>Davao del Norte State College</strong></p>
-          <p class="muted">Bachelor of Science in Information Technology</p>
-          <p class="muted">4th Year &middot; Set B</p>
-          <p class="muted">IT415 - Application Development and Emerging Technologies</p>
+      </section>
+      <section class="section editorial-about" id="about">
+        <div class="container">
+          <!-- SECTION LABEL -->
+          <div class="editorial-eyebrow reveal">
+            <span class="eyebrow-line"> </span>
+          </div>
+          <!-- MAIN EDITORIAL LAYOUT -->
+          <div class="editorial-main">
+            <!-- LEFT COLUMN -->
+            <div class="editorial-left">
+              <!-- OVERSIZED HEADING -->
+              <div class="editorial-title reveal">
+                <h2>
+                  ABOUT
+                  <span> ME. </span>
+                </h2>
+              </div>
+              <!-- PHOTO AND INTRODUCTION -->
+              <div class="editorial-intro-grid">
+                <!-- PROFILE PHOTO PLACEHOLDER -->
+                <div class="editorial-photo-area reveal">
+                  <div class="editorial-photo-ring">
+                    <div class="editorial-photo">
+                      <img
+                        alt="Photograph of Jumeirah Joy A. Bayotas"
+                        class="about-profile-img"
+                        decoding="async"
+                        loading="lazy"
+                        src="img/Me.jpg"
+                      />
+                    </div>
+                    <span aria-hidden="true" class="photo-star"> ✦ </span>
+                  </div>
+                  <!-- PERSONAL QUOTE -->
+                  <blockquote class="editorial-quote">
+                    <span aria-hidden="true"> “ </span>
+                    <p>I turn ideas into digital experiences.</p>
+                  </blockquote>
+                </div>
+                <!-- WHO I AM -->
+                <div class="editorial-introduction reveal">
+                  <div class="editorial-mini-heading">
+                    <span class="mini-line"> </span>
+                    <span> WHO I AM </span>
+                  </div>
+                  <p class="editorial-lead">
+                    Hi! I'm
+                    <strong> Jumeirah Joy A. Bayotas, </strong>
+                    a fourth-year Bachelor of Science in Information Technology
+                    student at Davao del Norte State College.
+                  </p>
+                  <p>
+                    I'm passionate about creating user-centered web applications
+                    and continuously improving my technical and problem-solving
+                    skills through different projects and emerging technologies.
+                  </p>
+                  <p>
+                    I enjoy transforming ideas into functional digital
+                    solutions, exploring new technologies, and collaborating
+                    with others to solve real-world problems.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- RIGHT COLUMN -->
+            <div class="editorial-right">
+              <!-- CAREER OBJECTIVE -->
+              <div class="editorial-block reveal">
+                <div class="editorial-block-heading">
+                  <span class="editorial-icon">
+                    <svg viewbox="0 0 24 24">
+                      <circle cx="12" cy="12" r="9"></circle>
+                      <circle cx="12" cy="12" r="5"></circle>
+                      <circle cx="12" cy="12" r="1"></circle>
+                    </svg>
+                  </span>
+                  <h3>CAREER OBJECTIVE</h3>
+                  <span class="heading-line"> </span>
+                </div>
+                <p class="objective-text">
+                  To gain practical experience in the field of information
+                  technology, enhance my technical and professional skills, and
+                  contribute to meaningful projects that provide useful and
+                  innovative digital solutions.
+                </p>
+              </div>
+              <!-- EDUCATION -->
+              <div class="editorial-block reveal">
+                <div class="editorial-block-heading">
+                  <span class="editorial-icon">
+                    <svg viewbox="0 0 24 24">
+                      <path d="m2 10 10-5 10 5-10 5-10-5z"></path>
+                      <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                      <path d="M22 10v7"></path>
+                    </svg>
+                  </span>
+                  <h3>EDUCATION</h3>
+                  <span class="heading-line"> </span>
+                </div>
+                <div class="education-timeline">
+                  <!-- COLLEGE -->
+                  <div class="education-entry">
+                    <span class="timeline-dot"> </span>
+                    <div class="education-year">2023–Present</div>
+                    <div class="education-content">
+                      <h4>Davao del Norte State College</h4>
+                      <p>Bachelor of Science in Information Technology</p>
+                      <span class="education-pill"> 4th Year · Set B </span>
+                    </div>
+                  </div>
+                  <!-- SENIOR HIGH SCHOOL -->
+                  <div class="education-entry">
+                    <span class="timeline-dot"> </span>
+                    <div class="education-year">2021–2023</div>
+                    <div class="education-content">
+                      <h4>Sto. Tomas National High School</h4>
+                      <p>Senior High School</p>
+                      <span class="education-pill"> ABM Strand </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- BOTTOM INFORMATION AREA -->
+          <div class="editorial-bottom">
+            <!-- BASIC INFORMATION -->
+            <div class="editorial-bottom-block reveal">
+              <div class="editorial-block-heading">
+                <span class="editorial-icon small">
+                  <svg viewbox="0 0 24 24">
+                    <circle cx="12" cy="7" r="4"></circle>
+                    <path d="M4 21v-2a8 8 0 0 1 16 0v2"></path>
+                  </svg>
+                </span>
+                <h3>BASIC INFORMATION</h3>
+              </div>
+              <div class="basic-info-grid">
+                <div class="basic-info-item">
+                  <span class="info-label"> LOCATION </span>
+                  <p>Panabo City, Philippines</p>
+                </div>
+                <div class="basic-info-item">
+                  <span class="info-label"> YEAR LEVEL </span>
+                  <p>4th Year College</p>
+                </div>
+                <div class="basic-info-item">
+                  <span class="info-label"> DEGREE PROGRAM </span>
+                  <p>BS Information Technology</p>
+                </div>
+              </div>
+            </div>
+            <!-- CAREER INTERESTS -->
+            <div class="editorial-bottom-block reveal">
+              <div class="editorial-block-heading">
+                <span class="editorial-icon small">
+                  <svg viewbox="0 0 24 24">
+                    <path
+                      d="M9 18h6M10 22h4M8 14
+                   a7 7 0 1 1 8 0
+                   c-1 1-2 2-2 4h-4
+                   c0-2-1-3-2-4z"
+                    ></path>
+                  </svg>
+                </span>
+                <h3>CAREER INTERESTS</h3>
+              </div>
+              <div class="career-tags">
+                <span> Web Development </span>
+                <span> System Development </span>
+                <span> UI/UX Design </span>
+                <span> Database Management </span>
+                <span> Emerging Technologies </span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="panel">
-          <h3>Relevant coursework</h3>
-          <ul class="tags"><li class="tag">Web Development</li><li class="tag">Database Management</li><li class="tag">Data Structures and Algorithms</li><li class="tag">Networking</li></ul>
+      </section>
+      <section class="section" id="skills">
+        <div class="container reveal">
+          <h2>Skills</h2>
+          <p class="lead">
+            What I work with and how I work with others. Switch between the two
+            tabs.
+          </p>
+          <div aria-label="Skill categories" class="tabs" role="tablist">
+            <button
+              aria-controls="p1"
+              aria-selected="true"
+              class="tab"
+              id="t1"
+              role="tab"
+            >
+              Technical
+            </button>
+            <button
+              aria-controls="p2"
+              aria-selected="false"
+              class="tab"
+              id="t2"
+              role="tab"
+              tabindex="-1"
+            >
+              Soft skills
+            </button>
+          </div>
+          <ul
+            aria-labelledby="t1"
+            class="skill-panel show"
+            id="p1"
+            role="tabpanel"
+          >
+            <li class="skill">
+              <svg class="ico">
+                <use href="#i-code"></use>
+              </svg>
+              HTML/CSS
+            </li>
+            <li class="skill">
+              <svg class="ico">
+                <use href="#i-code"></use>
+              </svg>
+              JavaScript
+            </li>
+            <li class="skill">
+              <svg class="ico">
+                <use href="#i-code"></use>
+              </svg>
+              PHP
+            </li>
+            <li class="skill">
+              <svg class="ico">
+                <use href="#i-db"></use>
+              </svg>
+              Database Management
+            </li>
+            <li class="skill">
+              <svg class="ico">
+                <use href="#i-globe"></use>
+              </svg>
+              Web Development
+            </li>
+            <li class="skill">
+              <svg class="ico">
+                <use href="#i-git"></use>
+              </svg>
+              Git/GitHub
+            </li>
+          </ul>
+          <ul aria-labelledby="t2" class="skill-panel" id="p2" role="tabpanel">
+            <li class="skill">
+              <svg class="ico">
+                <use href="#i-chat"></use>
+              </svg>
+              Communication
+            </li>
+            <li class="skill">
+              <svg class="ico">
+                <use href="#i-users"></use>
+              </svg>
+              Teamwork
+            </li>
+            <li class="skill">
+              <svg class="ico">
+                <use href="#i-puzzle"></use>
+              </svg>
+              Problem-Solving
+            </li>
+            <li class="skill">
+              <svg class="ico">
+                <use href="#i-clock"></use>
+              </svg>
+              Time Management
+            </li>
+            <li class="skill">
+              <svg class="ico">
+                <use href="#i-shuffle"></use>
+              </svg>
+              Adaptability
+            </li>
+          </ul>
         </div>
+      </section>
+      <section class="section projects-showcase" id="projects">
+        <div class="container reveal">
+          <div class="projects-header">
+            <h2>My Projects</h2>
+            <div aria-hidden="true" class="projects-ring">
+              <span> </span>
+              <span> </span>
+            </div>
+          </div>
+          <div class="projects-grid">
+            <article class="showcase-card featured">
+              <div class="project-frame">
+                <img alt="UMA System preview" src="img/UMA.png" />
+              </div>
+              <h3>UMA System</h3>
+              <p>
+                Local farmers e-commerce platform with shopping, messaging, and
+                product browsing features.
+              </p>
+              <button class="more showcase-btn" data-project="uma">
+                View Details
+              </button>
+            </article>
+            <article class="showcase-card">
+              <div class="project-frame">
+                <img
+                  alt="Recipe Vault System preview"
+                  src="img/recipe_vault.png"
+                />
+              </div>
+              <h3>Recipe Vault System</h3>
+              <p>
+                Community recipe-sharing platform for discovering, bookmarking,
+                and discussing recipes.
+              </p>
+              <button class="more showcase-btn" data-project="vault">
+                View Details
+              </button>
+            </article>
+            <article class="showcase-card">
+              <div class="project-frame">
+                <img alt="Where Am I system preview" src="img/Where_Am_I.png" />
+              </div>
+              <h3>Where Am I?</h3>
+              <p>
+                GIS-based navigation system for digital wayfinding, maps, and
+                institutional directions.
+              </p>
+              <button class="more showcase-btn" data-project="gis">
+                View Details
+              </button>
+            </article>
+          </div>
+          <div class="projects-footer-decor">
+            <div aria-hidden="true" class="zigzag">
+              <span> </span>
+              <span> </span>
+              <span> </span>
+              <span> </span>
+            </div>
+            <div aria-hidden="true" class="project-dots">
+              <span class="active"> </span>
+              <span> </span>
+              <span> </span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ==========================================
+     ACHIEVEMENTS SECTION
+========================================== -->
+      <section
+        class="section journey-section achievements-section"
+        id="achievements"
+      >
+        <div class="container">
+          <!-- TWO-COLUMN ACHIEVEMENTS GRID -->
+          <div class="achievement-column">
+            <div class="journey-column-heading reveal">
+              <div class="journey-heading-icon">
+                <svg viewbox="0 0 24 24">
+                  <path d="M8 21h8M12 17v4M7 3h10v7a5 5 0 0 1-10 0V3z"></path>
+                  <path
+                    d="M7 5H3v3a4 4 0 0 0 4 4M17 5h4v3a4 4 0 0 1-4 4"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Achievements &amp; Recognition</h3>
+                <p>
+                  Academic honors, certifications, competitions, seminars, and
+                  training.
+                </p>
+              </div>
+            </div>
+            <!-- ACADEMIC HONORS -->
+            <div class="achievement-group reveal">
+              <div class="achievement-group-title">
+                <span class="achievement-group-icon"> ✦ </span>
+                <div>
+                  <h4>Academic Honors</h4>
+                  <p>Recognition for academic excellence.</p>
+                </div>
+              </div>
+              <div class="achievement-list">
+                <div class="achievement-item">
+                  <span class="achievement-symbol"> 🏅 </span>
+                  <div class="achievement-copy">
+                    <strong> Dean's Lister </strong>
+                    <small> 1st Year · 1st and 2nd Semester </small>
+                  </div>
+                  <span class="achievement-tag"> 2023–2024 </span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-symbol"> 🏅 </span>
+                  <div class="achievement-copy">
+                    <strong> First Honor </strong>
+                    <small> 2nd Year · 1st Semester </small>
+                  </div>
+                  <span class="achievement-tag"> 2024–2025 </span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-symbol"> 🏅 </span>
+                  <div class="achievement-copy">
+                    <strong> First Honor </strong>
+                    <small> 3rd Year · 1st and 2nd Semester </small>
+                  </div>
+                  <span class="achievement-tag"> 2025–2026 </span>
+                </div>
+              </div>
+            </div>
+            <!-- CISCO CERTIFICATIONS -->
+            <div class="achievement-group reveal">
+              <div class="achievement-group-title">
+                <span class="achievement-group-icon"> ◈ </span>
+                <div>
+                  <h4>Certifications</h4>
+                  <p>Completed Cisco networking and cybersecurity courses.</p>
+                </div>
+              </div>
+              <div class="achievement-list">
+                <div class="achievement-item">
+                  <span class="achievement-symbol cert-symbol"> CC </span>
+                  <div class="achievement-copy">
+                    <strong> CCNA: Introduction to Networks </strong>
+                    <small> Cisco Networking Academy </small>
+                  </div>
+                  <span class="achievement-tag"> Completed </span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-symbol cert-symbol"> CC </span>
+                  <div class="achievement-copy">
+                    <strong>
+                      CCNA: Switching, Routing, and Wireless Essentials
+                    </strong>
+                    <small> Cisco Networking Academy </small>
+                  </div>
+                  <span class="achievement-tag"> Completed </span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-symbol cert-symbol"> CS </span>
+                  <div class="achievement-copy">
+                    <strong>
+                      Information Assurance and Security I (Cybersecurity
+                      Essentials)
+                    </strong>
+                    <small> Cisco Course </small>
+                  </div>
+                  <span class="achievement-tag"> Completed </span>
+                </div>
+              </div>
+            </div>
+            <!-- COMPETITIONS & WORKSHOPS -->
+            <div class="achievement-group reveal">
+              <div class="achievement-group-title">
+                <span class="achievement-group-icon"> ✧ </span>
+                <div>
+                  <h4>Competitions, Seminars &amp; Workshops</h4>
+                  <p>Learning opportunities and technical participation.</p>
+                </div>
+              </div>
+              <div class="achievement-list">
+                <div class="achievement-item">
+                  <span class="achievement-symbol"> 🏆 </span>
+                  <div class="achievement-copy">
+                    <strong> Women in Computing Competition </strong>
+                    <small> CodeChum · Participant </small>
+                  </div>
+                  <span class="achievement-tag"> Competition </span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-symbol"> ♧ </span>
+                  <div class="achievement-copy">
+                    <strong> Women in Computing Seminar </strong>
+                    <small> Seminar Participant </small>
+                  </div>
+                  <span class="achievement-tag"> Seminar </span>
+                </div>
+                <div class="achievement-item">
+                  <span class="achievement-symbol"> ✎ </span>
+                  <div class="achievement-copy">
+                    <strong> Figma and UI/UX Workshop </strong>
+                    <small> CODEX Organization </small>
+                  </div>
+                  <span class="achievement-tag"> Workshop </span>
+                </div>
+              </div>
+            </div>
+            <!-- ORGANIZATION -->
+            <div class="achievement-group reveal">
+              <div class="achievement-group-title">
+                <span class="achievement-group-icon"> ✺ </span>
+                <div>
+                  <h4>Organization Involvement</h4>
+                  <p>Technical and organizational roles.</p>
+                </div>
+              </div>
+              <div class="achievement-list">
+                <div class="achievement-item">
+                  <span class="achievement-symbol codex-symbol"> CX </span>
+                  <div class="achievement-copy">
+                    <strong> CODEX Organization </strong>
+                    <small> Developer · System Analyst </small>
+                  </div>
+                  <span class="achievement-tag"> Member </span>
+                </div>
+              </div>
+              <!-- End achievement-list -->
+            </div>
+            <!-- End Organization Involvement achievement-group -->
+          </div>
+          <!-- End achievement-column -->
+        </div>
+        <!-- End Achievements container -->
+      </section>
+      <!-- End of Achievements section -->
+      <!-- ========================================
+     EXPERIENCE SECTION
+========================================= -->
+      <section
+        class="section journey-section experience-section"
+        id="experience"
+      >
+        <div class="container">
+          <div class="experience-column">
+            <div class="journey-column-heading reveal">
+              <div class="journey-heading-icon">
+                <svg viewbox="0 0 24 24">
+                  <rect height="14" rx="2" width="18" x="3" y="7"></rect>
+                  <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                  <path d="M3 13h18M10 13v2h4v-2"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Experience &amp; Leadership</h3>
+                <p>
+                  Leadership, technical projects, and practical involvement.
+                </p>
+              </div>
+            </div>
+            <!-- ALTERNATING TIMELINE -->
+            <div class="experience-timeline">
+              <!-- EXPERIENCE 1 -->
+              <article class="experience-entry right reveal">
+                <span class="experience-node"> </span>
+                <div class="experience-card">
+                  <span class="experience-role-icon"> ♧ </span>
+                  <div class="experience-card-content">
+                    <div class="experience-card-top">
+                      <h4>Informal Administrative Assistance</h4>
+                    </div>
+                    <small> Home-Based · Elizabeth A. Bautista </small>
+                    <p>
+                      Provided ongoing informal assistance with home-based tasks
+                      and activities.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <!-- EXPERIENCE 2 -->
+              <article class="experience-entry left reveal">
+                <span class="experience-node"> </span>
+                <div class="experience-card">
+                  <span class="experience-role-icon"> ▤ </span>
+                  <div class="experience-card-content">
+                    <div class="experience-card-top">
+                      <h4>Private Tutor</h4>
+                      <span class="experience-period"> 6 Months </span>
+                    </div>
+                    <small> Home-Based · Haniel A. Bautista </small>
+                    <p>
+                      Provided tutoring assistance and learning support for
+                      approximately six months.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <!-- EXPERIENCE 3 -->
+              <article class="experience-entry right reveal">
+                <span class="experience-node"> </span>
+                <div class="experience-card">
+                  <span class="experience-role-icon"> ♧ </span>
+                  <div class="experience-card-content">
+                    <div class="experience-card-top">
+                      <h4>Internal Vice President</h4>
+                    </div>
+                    <small> CODEX Organization </small>
+                    <p>
+                      Supports organizational coordination, internal activities,
+                      and communication among members.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <!-- EXPERIENCE 4 -->
+              <article class="experience-entry left reveal">
+                <span class="experience-node"> </span>
+                <div class="experience-card">
+                  <span class="experience-role-icon"> &lt;/&gt; </span>
+                  <div class="experience-card-content">
+                    <div class="experience-card-top">
+                      <h4>Developer &amp; System Analyst</h4>
+                    </div>
+                    <small> CODEX Organization </small>
+                    <p>
+                      Participates in software development and system analysis
+                      activities within the organization.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <!-- EXPERIENCE 5 -->
+              <article class="experience-entry right reveal">
+                <span class="experience-node"> </span>
+                <div class="experience-card">
+                  <span class="experience-role-icon"> ₱ </span>
+                  <div class="experience-card-content">
+                    <div class="experience-card-top">
+                      <h4>Set Treasurer</h4>
+                      <span class="experience-period"> 1st Year </span>
+                    </div>
+                    <small> College Class Leadership </small>
+                    <p>
+                      Handled class financial responsibilities and assisted in
+                      managing class-related funds.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <!-- EXPERIENCE 6 -->
+              <article class="experience-entry left reveal">
+                <span class="experience-node"> </span>
+                <div class="experience-card">
+                  <span class="experience-role-icon"> ♧ </span>
+                  <div class="experience-card-content">
+                    <div class="experience-card-top">
+                      <h4>Set Mayor</h4>
+                      <span class="experience-period">
+                        2nd Year – Present
+                      </span>
+                    </div>
+                    <small> College Class Leadership </small>
+                    <p>
+                      Serves as a class representative, helping coordinate class
+                      concerns, activities, and communication.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <!-- EXPERIENCE 7 -->
+              <article class="experience-entry right reveal">
+                <span class="experience-node"> </span>
+                <div class="experience-card">
+                  <span class="experience-role-icon"> ▦ </span>
+                  <div class="experience-card-content">
+                    <div class="experience-card-top">
+                      <h4>Buildrush Competition Facilitator</h4>
+                      <span class="experience-period"> Oct 26 </span>
+                    </div>
+                    <small> ByteFest </small>
+                    <p>
+                      Helped facilitate the programming and Buildrush
+                      competition activities during ByteFest.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <!-- EXPERIENCE 8 -->
+              <article class="experience-entry left reveal">
+                <span class="experience-node"> </span>
+                <div class="experience-card">
+                  <span class="experience-role-icon"> ▤ </span>
+                  <div class="experience-card-content">
+                    <div class="experience-card-top">
+                      <h4>Collection Management System Team Member</h4>
+                      <span class="experience-period"> Beta Testing </span>
+                    </div>
+                    <small> Institute Project · ICLSG </small>
+                    <p>
+                      Part of the team that developed a collection management
+                      system intended for institutional use. The system is
+                      currently in its beta testing phase.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="contact">
+        <div class="container reveal">
+          <h2>Contact</h2>
+          <p class="lead">
+            Open to collaborations, internship opportunities, and conversations
+            about tech.
+          </p>
+          <ul class="contact">
+            <li>
+              <svg class="ico">
+                <use href="#i-mail"></use>
+              </svg>
+              <div>
+                <small> Email </small>
+                <strong> Jumeirah Joy A. Bayotas </strong>
+              </div>
+            </li>
+            <li>
+              <svg class="ico">
+                <use href="#i-phone"></use>
+              </svg>
+              <div>
+                <small> Phone </small>
+                <strong> 09276858717 </strong>
+              </div>
+            </li>
+            <li>
+              <svg class="ico">
+                <use href="#i-pin"></use>
+              </svg>
+              <div>
+                <small> Location </small>
+                <strong> Panabo City, Philippines </strong>
+              </div>
+            </li>
+            <li>
+              <svg class="ico">
+                <use href="#i-gh"></use>
+              </svg>
+              <div>
+                <small> GitHub </small>
+                <strong>
+                  <a
+                    href="https://github.com/Joyaa1017"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Joyaa1017
+                  </a>
+                </strong>
+              </div>
+            </li>
+            <!-- <li><svg class="ico"><use href="#i-in"/></svg><div><small>LinkedIn</small><strong>[Your LinkedIn]</strong></div></li> -->
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <span>
+          ©
+          <span id="year"> 2026 </span>
+          Jumeirah Joy A. Bayotas
+        </span>
+        <span> IT415 · BSIT 4-B · Davao del Norte State College </span>
       </div>
-    </div>
-  </section>
-
-  <section class="section" id="skills">
-    <div class="container reveal">
-      <h2>Skills</h2>
-      <p class="lead">What I work with and how I work with others. Switch between the two tabs.</p>
-      <div class="tabs" role="tablist" aria-label="Skill categories">
-        <button class="tab" role="tab" id="t1" aria-selected="true" aria-controls="p1">Technical</button>
-        <button class="tab" role="tab" id="t2" aria-selected="false" aria-controls="p2" tabindex="-1">Soft skills</button>
-      </div>
-      <ul class="skill-panel show" id="p1" role="tabpanel" aria-labelledby="t1">
-        <li class="skill"><svg class="ico"><use href="#i-code"/></svg>HTML/CSS</li>
-        <li class="skill"><svg class="ico"><use href="#i-code"/></svg>JavaScript</li>
-        <li class="skill"><svg class="ico"><use href="#i-code"/></svg>PHP</li>
-        <li class="skill"><svg class="ico"><use href="#i-db"/></svg>Database Management</li>
-        <li class="skill"><svg class="ico"><use href="#i-globe"/></svg>Web Development</li>
-        <li class="skill"><svg class="ico"><use href="#i-git"/></svg>Git/GitHub</li>
-      </ul>
-      <ul class="skill-panel" id="p2" role="tabpanel" aria-labelledby="t2">
-        <li class="skill"><svg class="ico"><use href="#i-chat"/></svg>Communication</li>
-        <li class="skill"><svg class="ico"><use href="#i-users"/></svg>Teamwork</li>
-        <li class="skill"><svg class="ico"><use href="#i-puzzle"/></svg>Problem-Solving</li>
-        <li class="skill"><svg class="ico"><use href="#i-clock"/></svg>Time Management</li>
-        <li class="skill"><svg class="ico"><use href="#i-shuffle"/></svg>Adaptability</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section soft" id="projects">
-    <div class="container reveal">
-      <h2>Projects</h2>
-      <p class="lead">Select a project to see its main features.</p>
-      <div class="grid">
-        <article class="card">
-          <div class="badge"><svg class="ico"><use href="#i-cart"/></svg></div>
-          <h3>UMA</h3><p class="sub">Local Farmers E-Commerce Platform</p>
-          <p>An e-commerce platform that connects local farmers directly with consumers, featuring product search, shopping cart, online purchasing, and direct farmer-to-consumer messaging.</p>
-          <button class="more" data-project="uma">View features</button>
-        </article>
-        <article class="card">
-          <div class="badge"><svg class="ico"><use href="#i-book"/></svg></div>
-          <h3>Recipe Vault</h3><p class="sub">Community Recipe-Sharing Platform</p>
-          <p>A community-based recipe-sharing platform featuring recipe discovery, bookmarks, user discussions, ratings, and a featured system for popular chefs and recipes.</p>
-          <button class="more" data-project="vault">View features</button>
-        </article>
-        <article class="card">
-          <div class="badge"><svg class="ico"><use href="#i-pin"/></svg></div>
-          <h3>Where Am I?</h3><p class="sub">GIS-Based Navigation System</p>
-          <p>A GIS-based navigation and wayfinding system designed to help users navigate complex institutions through digital maps, building information, and indoor directions.</p>
-          <button class="more" data-project="gis">View features</button>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="contact">
-    <div class="container reveal">
-      <h2>Contact</h2>
-      <p class="lead">Open to collaborations, internship opportunities, and conversations about tech.</p>
-      <ul class="contact">
-        <li><svg class="ico"><use href="#i-mail"/></svg><div><small>Email</small><strong>Jumeirah Joy A. Bayotas</strong></div></li>
-        <li><svg class="ico"><use href="#i-phone"/></svg><div><small>Phone</small><strong>09276858717</strong></div></li>
-        <li><svg class="ico"><use href="#i-pin"/></svg><div><small>Location</small><strong>Panabo City, Philippines</strong></div></li>
-        <li><svg class="ico"><use href="#i-gh"/></svg><div><small>GitHub</small><strong>Joyaa1017</strong></div></li>
-        <!-- <li><svg class="ico"><use href="#i-in"/></svg><div><small>LinkedIn</small><strong>[Your LinkedIn]</strong></div></li> -->
-      </ul>
-    </div>
-  </section>
-</main>
-
-<footer><div class="container"><span>&copy; <span id="year">2026</span> Jumeirah Joy A. Bayotas</span><span>IT415 &middot; BSIT 4-B &middot; Davao del Norte State College</span></div></footer>
-<button class="icon-btn" id="top" aria-label="Back to top"><svg class="ico"><use href="#i-up"/></svg></button>
-
-<dialog id="dlg" aria-labelledby="dTitle">
-  <button class="icon-btn close" id="dClose" aria-label="Close"><svg class="ico"><use href="#i-x"/></svg></button>
-  <h3 id="dTitle"></h3><p class="sub" id="dSub"></p><p class="muted" id="dText"></p>
-  <ul id="dList"></ul>
-  <button class="btn primary" id="dOk" style="color:var(--on-accent);background:var(--accent);border-color:var(--accent)">Close</button>
-</dialog>
-
-<script src="script.js"></script>
-</body>
+    </footer>
+    <button aria-label="Back to top" class="icon-btn" id="top">
+      <svg class="ico">
+        <use href="#i-up"></use>
+      </svg>
+    </button>
+    <dialog aria-labelledby="dTitle" id="dlg">
+      <button aria-label="Close" class="icon-btn close" id="dClose">
+        <svg class="ico">
+          <use href="#i-x"></use>
+        </svg>
+      </button>
+      <h3 id="dTitle"></h3>
+      <p class="sub" id="dSub"></p>
+      <p class="muted" id="dText"></p>
+      <ul id="dList"></ul>
+      <button
+        class="btn primary"
+        id="dOk"
+        style="
+          color: var(--on-accent);
+          background: var(--accent);
+          border-color: var(--accent);
+        "
+      >
+        Close
+      </button>
+    </dialog>
+    <script src="script.js"></script>
+  </body>
 </html>
